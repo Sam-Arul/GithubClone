@@ -8,13 +8,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RepoTableComponent } from './repo-table/repo-table.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ResultComponent } from './result/result.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     RepoTableComponent,
-    ResultComponent
+    ResultComponent,
+    NavbarComponent,
+    FooterComponent,
+    HomeComponent,
+    
   ],
   imports: [
     BrowserModule,

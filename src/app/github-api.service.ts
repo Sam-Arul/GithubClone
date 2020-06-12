@@ -14,7 +14,12 @@ export class GithubApiService {
     this.userData = this.httpclient.get('https://api.github.com/users/'+userName);
     return this.httpclient.get('https://api.github.com/users/'+userName);
   }
+getRepoDetails(userName):Observable<any>{
 
+  this.userRepo = this.httpclient.get('https://api.github.com/users/'+userName+'/repos');
+  console.log(this.userRepo);
+  return this.httpclient.get('https://api.github.com/users/'+userName+'/repos'); 
+}
   
 
 

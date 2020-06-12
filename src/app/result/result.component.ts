@@ -8,19 +8,27 @@ import { GithubApiService } from '../github-api.service';
   styleUrls: ['./result.component.css']
 })
 export class ResultComponent implements OnInit {
-name;
-data;
+  data;
+  repos;
+  username;
+  pageOfItems: Array<any>;
   constructor(private activatedRoute: ActivatedRoute, private githubApiService:GithubApiService) {
-this.name = this.activatedRoute.snapshot.params.userName;
-console.log(this.name);
- this.githubApiService.getUserDetails(this.name).subscribe((value)=>{
+this.username = this.activatedRoute.snapshot.params.userName;
+console.log(this.username);
+ this.githubApiService.getUserDetails(this.username).subscribe((value)=>{
 
    this.data = value;
  }
  )
+ this.githubApiService.getRepoDetails(this.username).subscribe((repos)=> {
+  this.repos = repos;
+  console.log(this.repos);
+})
    }
 
   ngOnInit(): void {
   }
-
+  onChangePage(pageOfItems: Array<any>) {
+    this.pageOfItems = pageOfItems;
+}
 }

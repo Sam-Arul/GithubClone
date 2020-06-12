@@ -1,0 +1,9 @@
+.container-fluid{
+    border: 1px solid black;
+}
+#content{
+    margin-top: 100px;
+    align-content: center;
+    /* margin-left: 100px; */
+    border: 1px solid black;
+}
